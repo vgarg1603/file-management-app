@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A modern File Management App built with Next.js, Next-Auth for authentication, and Appwrite as the backend database. This app allows users to securely upload, organize, and manage their files with ease.
 
-## Getting Started
 
-First, run the development server:
+Features
+User Authentication: Secure login and registration using Next-Auth with support for email/password, Google, and GitHub authentication.
 
-```bash
+File Upload: Upload files to the cloud with progress tracking and file type validation.
+
+File Management: View, organize, and delete uploaded files in a user-friendly interface.
+
+Search and Filter: Easily search and filter files by name, type, or date.
+
+Responsive Design: Fully responsive and optimized for mobile and desktop devices.
+
+Secure Storage: Files are securely stored and managed using Appwrite Storage.
+
+Technologies Used
+Frontend: Next.js, Tailwind CSS (or your preferred CSS framework)
+
+Authentication: Next-Auth
+
+Backend: Appwrite (Database, Storage, and Authentication)
+
+State Management: React Context API or Zustand (if used)
+
+Deployment: Vercel, Netlify, or any other platform
+
+Getting Started
+Follow these steps to set up and run the project locally.
+
+Prerequisites
+Node.js (v16 or higher)
+
+npm or yarn
+
+Appwrite account (for backend setup)
+
+Installation
+Clone the repository:
+
+bash
+Copy
+git clone https://github.com/your-username/file-management-app.git
+cd file-management-app
+Install dependencies:
+
+bash
+Copy
+npm install
+# or
+yarn install
+Set up environment variables:
+Create a .env.local file in the root directory and add the following variables:
+
+env
+Copy
+NEXT_PUBLIC_APPWRITE_ENDPOINT=your-appwrite-endpoint
+NEXT_PUBLIC_APPWRITE_PROJECT_ID=your-appwrite-project-id
+NEXT_PUBLIC_APPWRITE_DATABASE_ID=your-appwrite-database-id
+NEXT_PUBLIC_APPWRITE_STORAGE_BUCKET_ID=your-appwrite-storage-bucket-id
+NEXTAUTH_SECRET=your-secret-key
+NEXTAUTH_URL=http://localhost:3000
+Run the development server:
+
+bash
+Copy
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open the app:
+Visit http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Appwrite Setup
+Create an Appwrite Project:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Sign up at Appwrite.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a new project and note down the Project ID and Endpoint.
 
-## Learn More
+Set Up Database:
 
-To learn more about Next.js, take a look at the following resources:
+Create a new database and collection in Appwrite.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Add necessary attributes (e.g., userId, fileName, fileUrl, createdAt).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Set Up Storage:
 
-## Deploy on Vercel
+Create a storage bucket for file uploads.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Configure permissions to allow authenticated users to upload and manage files.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Folder Structure
+Copy
+file-management-app/
+├── public/               # Static assets
+├── src/
+│   ├── components/       # Reusable components
+│   ├── context/          # Context API for state management (if used)
+│   ├── pages/            # Next.js pages
+│   ├── services/         # Appwrite API services
+│   ├── styles/           # CSS or Tailwind styles
+│   └── utils/            # Utility functions
+├── .env.local            # Environment variables
+├── next.config.js        # Next.js configuration
+└── package.json          # Project dependencies
+Contributing
+Contributions are welcome! Follow these steps:
+
+Fork the repository.
+
+Create a new branch (git checkout -b feature/YourFeature).
+
+Commit your changes (git commit -m 'Add some feature').
+
+Push to the branch (git push origin feature/YourFeature).
+
+Open a pull request.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Acknowledgments
+Next.js Documentation
+
+Appwrite Documentation
+
+Next-Auth Documentation
+
